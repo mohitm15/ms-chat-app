@@ -1,14 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+import { ChatEngine } from "react-chat-engine";
 
 function App() {
   return (
-    <div className="App">
-          <h1 className="text-3xl font-bold underline text-red-500">
-      Hello world!
-    </h1>
+    <div className="container">
+<ChatEngine
+			height='100vh'
+			userName='GMmohit'
+			userSecret='chess'
+			projectID='04903c43-e194-4310-a4e7-8c48fac23c8d'
+		/>
     </div>
   );
-}
+} 
 
 export default App;
