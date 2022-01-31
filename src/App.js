@@ -1,5 +1,7 @@
 import "./App.css";
 import { ChatEngine } from "react-chat-engine";
+import ChatFeed from "./components/ChatFeed";
+
 
 function App() {
   const project_id = process.env.REACT_APP_PROJECT_ID;
@@ -13,6 +15,7 @@ function App() {
         userName={user_name}
         userSecret={user_secret}
         projectID={project_id}
+        renderChatFeed={ (chatAppProps) => <ChatFeed {...chatAppProps} /> }
       />
     </div>
   );
