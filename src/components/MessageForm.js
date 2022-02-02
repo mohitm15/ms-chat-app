@@ -41,7 +41,7 @@ const MessageForm = (props) => {
       <div>
         <label htmlFor="upload_button">
           <span className="bg-blue-400 px-2 py-2 rounded-lg ml-2 border-2 border-black hover:bg-blue-500">
-            <i class="fas fa-image"></i>
+            <i className="fas fa-image"></i>
           </span>
         </label>
         <input
@@ -55,7 +55,7 @@ const MessageForm = (props) => {
           type="submit"
           className="send_button bg-blue-400 px-2 py-1 rounded-lg ml-2 border-2 border-black hover:bg-blue-500"
         >
-          <i class="fas fa-paper-plane"></i>
+          <i className="fas fa-paper-plane"></i>
         </button>
       </div>
     </form>
