@@ -6,13 +6,13 @@ const MyMessage = ({ message }) => {
       <img
         src={message.attachments[0].file}
         alt="message_attachment"
-        className="w-2/5 h-3/5 float-right"
+        className="message-image"
       />
     );
   }
 
   return (
-    <div className="float-right rounded-lg bg-pink-900 text-silver-300 px-2 mr-2">
+    <div className="message" style={{ float: 'right', marginRight: '18px', color: 'white', backgroundColor: '#3B2A50' }}>
       {message?.text}
     </div>
   );

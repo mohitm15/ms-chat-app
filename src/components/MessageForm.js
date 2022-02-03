@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
 
 const MessageForm = (props) => {
+  
   const [value, setValue] = useState("");
-
   const { chatId, creds } = props;
 
   const handleSubmit = (e) => {
@@ -26,12 +26,12 @@ const MessageForm = (props) => {
 
   return (
     <form
-      className="form relative flex flex-row justify-between items-center"
+      className="message-form"
       onSubmit={handleSubmit}
     >
       <div>
         <input
-          className="form-input p-1 border-xs border-gray-600"
+          className="message-input"
           placeholder="Send a Message ..."
           value={value}
           onChange={handleChange}
@@ -40,7 +40,7 @@ const MessageForm = (props) => {
       </div>
       <div>
         <label htmlFor="upload_button">
-          <span className="bg-blue-400 px-2 py-2 rounded-lg ml-2 border-2 border-black hover:bg-blue-500">
+          <span className="image-button">
             <i className="fas fa-image"></i>
           </span>
         </label>
@@ -53,9 +53,9 @@ const MessageForm = (props) => {
         />
         <button
           type="submit"
-          className="send_button bg-blue-400 px-2 py-1 rounded-lg ml-2 border-2 border-black hover:bg-blue-500"
+          className="send-button"
         >
-          <i className="fas fa-paper-plane"></i>
+          <i className="fas fa-paper-plane send-icon"></i>
         </button>
       </div>
     </form>

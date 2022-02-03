@@ -14,7 +14,7 @@ const ChatFeed = (props) => {
 
   const renderReadReceipts = (message, isMyMessage) => {
     chat.people.map((item, index) => item.last_read === message.id && (
-      <div key={`read_${index}`} className="bg-yellow-200" style={{ float: isMyMessage ? 'right' : 'left' , backgroundImage: `url(${item?.person?.avatar})`}}
+      <div key={`read_${index}`} className="read-receipt" style={{ float: isMyMessage ? 'right' : 'left' , backgroundImage: `url(${item?.person?.avatar})`}}
       />
     ))
   } 
@@ -32,9 +32,9 @@ const ChatFeed = (props) => {
       return (
         <div
           key={`msg_${index}`}
-          className="bg-gray-900 text-white text-lg py-1"
+          style={{width:'100%'}}
         >
-          <div className="bg-green-300 ">
+          <div className="message-block">
             {isMyMessage ? (
               <MyMessage message={message} />
             ) : (
@@ -46,7 +46,7 @@ const ChatFeed = (props) => {
               marginRight: isMyMessage ? "18px" : "0px",
               marginLeft: isMyMessage ? "0px" : "68px",
             }}
-            className="px-3 py-1"
+            className="read-receipts"
           >
             {renderReadReceipts(message, isMyMessage)}
           </div>
@@ -57,17 +57,18 @@ const ChatFeed = (props) => {
 
   if (!chat) return "Loading .... !";
   return (
-    <div className="bg-black">
-      <div className="container">
-        <div className="text-base sm:text-3xl border-2 text-white text-center font-bold py-4 font-mono">
+    <div className="chat-feed">
+      <div className="chat-title-container">
+        <div className="chat-title">
           {chat?.title}
         </div>
-        <div className="text-xl bg-gray-800 text-purple-100 font-bold">
+        <div className="chat-subtitle">
           {chat.people.map((item) => `${item.person.username}`)}
         </div>
       </div>
       {renderMessage()}
-      <div className="bg-blue-200 p-2">
+      <div style={{ height: '100px' }} />
+      <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
       </div>
     </div>
