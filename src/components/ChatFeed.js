@@ -12,12 +12,12 @@ const ChatFeed = (props) => {
   //   console.log( "MESSAGE - "+ Object.keys(messages) )
   //   console.log( "USERNAME - "+userName)
 
-  const renderReadReceipts = (message, isMyMessage) => {
+  const renderReadReceipts = (message, isMyMessage) => 
     chat.people.map((item, index) => item.last_read === message.id && (
       <div key={`read_${index}`} className="read-receipt" style={{ float: isMyMessage ? 'right' : 'left' , backgroundImage: `url(${item?.person?.avatar})`}}
       />
-    ))
-  } 
+    ));
+   
   const renderMessage = () => {
     const keys = Object.keys(messages);
 
@@ -56,6 +56,7 @@ const ChatFeed = (props) => {
   };
 
   if (!chat) return "Loading .... !";
+
   return (
     <div className="chat-feed">
       <div className="chat-title-container">
