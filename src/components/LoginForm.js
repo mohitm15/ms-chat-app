@@ -17,7 +17,7 @@ const LoginForm = () => {
     };
 
     try {
-      await axios.get("https://api.chatengine.io/chats", {
+      await axios.get("https://api.chatengine.io/chats/latest/{{5}}/", {
         headers: authObject,
       });
 
