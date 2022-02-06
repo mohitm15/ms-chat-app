@@ -12,12 +12,21 @@ const ChatFeed = (props) => {
   //   console.log( "MESSAGE - "+ Object.keys(messages) )
   //   console.log( "USERNAME - "+userName)
 
-  const renderReadReceipts = (message, isMyMessage) => 
-    chat.people.map((item, index) => item.last_read === message.id && (
-      <div key={`read_${index}`} className="read-receipt" style={{ float: isMyMessage ? 'right' : 'left' , backgroundImage: `url(${item?.person?.avatar})`}}
-      />
-    ));
-   
+  const renderReadReceipts = (message, isMyMessage) =>
+    chat.people.map(
+      (item, index) =>
+        item.last_read === message.id && (
+          <div
+            key={`read_${index}`}
+            className="read-receipt"
+            style={{
+              float: isMyMessage ? "right" : "left",
+              backgroundImage: `url(${item?.person?.avatar})`,
+            }}
+          />
+        )
+    );
+
   const renderMessage = () => {
     const keys = Object.keys(messages);
 
@@ -30,15 +39,15 @@ const ChatFeed = (props) => {
       //console.log(isMyMessage);
 
       return (
-        <div
-          key={`msg_${index}`}
-          style={{width:'100%'}}
-        >
+        <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-block">
             {isMyMessage ? (
               <MyMessage message={message} />
             ) : (
-              <TheirMessage message={messages[lastMessageKey]} />
+              <TheirMessage
+                message={message}
+                lastMessage={messages[lastMessageKey]}
+              />
             )}
           </div>
           <div
@@ -55,20 +64,18 @@ const ChatFeed = (props) => {
     });
   };
 
-  if (!chat) return "Loading .... !";
+  if (!chat) return <div />;
 
   return (
     <div className="chat-feed">
       <div className="chat-title-container">
-        <div className="chat-title">
-          {chat?.title}
-        </div>
+        <div className="chat-title">{chat?.title}</div>
         <div className="chat-subtitle">
           {chat.people.map((item) => `${item.person.username}`)}
         </div>
       </div>
       {renderMessage()}
-      <div style={{ height: '100px' }} />
+      <div style={{ height: "100px" }} />
       <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
       </div>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
 
 const MessageForm = (props) => {
-  
   const [value, setValue] = useState("");
   const { chatId, creds } = props;
 
@@ -25,10 +24,7 @@ const MessageForm = (props) => {
   };
 
   return (
-    <form
-      className="message-form"
-      onSubmit={handleSubmit}
-    >
+    <form className="message-form" onSubmit={handleSubmit}>
       <div>
         <input
           className="message-input"
@@ -51,10 +47,7 @@ const MessageForm = (props) => {
           className="hidden"
           onChange={handleUpload}
         />
-        <button
-          type="submit"
-          className="send-button"
-        >
+        <button type="submit" className="send-button">
           <i className="fas fa-paper-plane send-icon"></i>
         </button>
       </div>
