@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -47,47 +49,69 @@
 
 .ce-chat-list {
   background-color: #2D2C2C !important;
+  /* backside of chat */
 }
 
 .ce-chats-container {
   background-color: #2D2C2C !important;
+  
+  /* left chat-container */
 }
 
 .ce-active-chat-card {
-  background-color: #2D2C2C !important;
-  border: 4px solid #fffff1 !important;
-  border-radius: 15px !important;
-  color:white;
-  font-decoration:bold;
+  background-color: #232323 !important;
+  border: 2px solid #fffff1 !important;
+  border-radius: 1px !important;
+  color:white !important;
+  font-weight:bolder !important;
+  font-family: 'Noto Sans', sans-serif !important;
+  /* left active chat card */
 }
 
 .ce-chat-subtitle-text {
-  color: #E2E2F6 !important;
+  color: #E2E2F6 !important; 
+  font-weight:normal;
+  /* 1 image */
 }
 
 .ce-chat-form-container {
   padding-bottom: 20px !important;
+  background-color: #464775 !important; 
+  color:white;
+  font-family: 'Noto Sans', sans-serif !important;
+  /* my-chat container */
 }
 
 .ce-text-input {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
+  color:black;
+  font-family: 'Noto Sans', sans-serif;
+  /* Add new chat input */
 }
 
 .ce-primary-button {
-  border-radius: 6px !important;
-  background-color: #7554a0 !important;
+  border-radius: 6px  !important;
+  border: 1px white solid !important;
+  background-color: #3E3F66 !important;
   position: relative;
-  bottom: 1px;
+  bottom: 2px;
+  /* add new chat button */
 }
-
+.ce-primary-button:hover{
+  border: 2px white solid !important;
+  background-color: #292A4D !important;
+  /* add new chat button hover*/
+}
 .ce-danger-button {
   background-color: white !important;
   border-radius: 22px !important;
 }
 
 .ce-settings {
-  background-color: rgb(240, 240, 240) !important;
+  background-color: #2D2C2C !important;
+  font-family: 'Noto Sans', sans-serif;
+  /* right container */
 }
 
 .ce-autocomplete-input {
@@ -102,11 +126,14 @@
 }
 
 .ce-chat-settings-container {
-  padding-top: 12px !important;
+  padding-top: 20px !important;
+  /* right top space */
 }
 
 .ce-chat-avatars-row {
-  display: none !important;
+  display: flex !important;
+  padding: 5px;
+  /* avatar top right */
 }
 
 /* CUSTOM FEED */
@@ -115,25 +142,30 @@
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background-color: rgb(240, 240, 240);
+  background-color: #141414;
+  font-family: 'Noto Sans', sans-serif;
+  /* central container */
 }
 
 .chat-title-container {
-  width: calc(100% - 36px);
-  padding: 18px;
+  width: 100%;
+  padding: 8px;
   text-align: center;
+  background-color: #464775;
+  margin-bottom:15px;
+  /* Chess forum container */
 }
 
 .chat-title {
-  color: #7554a0;
+  color: white;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .chat-subtitle {
-  color: #7554a0;
-  font-weight: 600;
-  font-size: 12px;
+  color: #E2E2F6;
+  font-weight: 400;
+  font-size: 14px;
   padding-top: 4px;
 }
 
@@ -141,7 +173,7 @@
   float: left;
   width: 100%;
   display: flex;
-  margin-left: 18px;
+  margin-left: 24px;
 }
 
 .message-block {
@@ -165,6 +197,7 @@
   font-size: 16px;
   border-radius: 6px;
   max-width: 60%;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .message-image {
@@ -172,16 +205,18 @@
   object-fit: cover;
   border-radius: 6px;
   height: 30vw;
-  /* width: 30vw; */
+  width: 10vw;
   max-height: 200px;
   max-width: 200px;
   min-height: 100px;
   min-width: 100px;
+  border:1px #E2E2F6 solid;
 }
 
 .read-receipts {
   position: relative;
   bottom: 6px;
+  /* recipient image */
 }
 
 .read-receipt {
@@ -189,60 +224,62 @@
   height: 13px;
   border-radius: 13px;
   margin: 1.5px;
+  margin-left:5px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 14px;
+  /* recipeinet image block */
 }
 
 .message-form-container {
   position: absolute;
   bottom: 0px;
-  width: calc(100% - 36px);
-  padding: 18px;
-  background-color: rgb(240, 240, 240);
+  width: calc(100% - 15px);
+  padding: 25px 15px;
+  background-color: #141414;
 }
 
 .message-form {
   overflow: hidden;
-  border-radius: 6px;
-  border: 1px solid #3b2a50;
-  background-color: white;
+  background-color: #141414;
 }
 
 .message-input {
   height: 40px;
-  width: calc(100% - 132px);
-  background-color: white;
-  border: 1px solid white;
-  padding: 0px 18px;
+  width: calc(100%);
+  color:white;
+  background-color:#2D2C2C ;
+  border-bottom: 2px solid #464775;
+  padding: 25px 18px;
   outline: none;
-  font-size: 15px;
+  font-size: 17px;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .image-button {
   cursor: pointer;
-  padding: 0px 12px;
+  padding: 5px 12px;
   height: 100%;
+  color:white;
+  font-size:22px;
 }
 
 .send-button {
   height: 42px;
-  background-color: white;
-  border: 1px solid white;
-  padding: 0px 18px;
+  padding: 5px 15px;
   cursor: pointer;
+  color:white;
+  font-size:22px;
 }
 
 .send-icon {
   top: 1px;
   position: relative;
-  transform: rotate(-90deg);
 }
 
 .picture-icon {
   top: 1px;
   position: relative;
-  font-size: 14px;
 }
 
 /* FORM STYLES */

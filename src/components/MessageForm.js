@@ -37,7 +37,7 @@ const MessageForm = (props) => {
       <div>
         <label htmlFor="upload_button">
           <span className="image-button">
-            <i className="fas fa-image"></i>
+            <i className="far fa-image"></i>
           </span>
         </label>
         <input
@@ -48,7 +48,7 @@ const MessageForm = (props) => {
           onChange={handleUpload}
         />
         <button type="submit" className="send-button">
-          <i className="fas fa-paper-plane send-icon"></i>
+          <i className="far fa-paper-plane send-icon"></i>
         </button>
       </div>
     </form>
