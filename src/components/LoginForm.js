@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import  ImgPath  from "../assest/logo.jpg";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -34,9 +35,15 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="header bg-violet-900 flex flex-row justify-center h-5/6 py-2 sm:py-4">
+          <span className="text-base sm:text-2xl sm:font-bold text-white">MacroSoft Teams</span>
+        </div>
+      <div className="h-[100vh] w-full flex justify-center items-center bg-zinc-800">
+        
         <div className="form">
-          <h1 className="title">MS_CHAT-APP</h1>
+          <div>
+            {/* <img src={ImgPath} alt="logo" /> */}
+          </div>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
