@@ -6,9 +6,14 @@ import LoginForm from "./components/LoginForm";
 function App() {
   const project_id = process.env.REACT_APP_PROJECT_ID;
 
-  if (!localStorage.getItem("username")) return <LoginForm />;
+  if (!localStorage.getItem("username")) {
+    return (
+    <div className="w-full"><LoginForm /></div>
+    );
+  }
 
   return (
+    <div>
     <ChatEngine
       height="100vh"
       userName={localStorage.getItem("username")}
@@ -21,6 +26,7 @@ function App() {
         ).play()
       }
     />
+    </div>
   );
 }
 
