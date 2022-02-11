@@ -5,6 +5,18 @@ const MessageForm = (props) => {
   const [value, setValue] = useState("");
   const { chatId, creds } = props;
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const project_id = process.env.REACT_APP_PROJECT_ID;
+
+
+
+  const authObject = {
+    "Project-ID": project_id,
+    "User-Name": username,
+    "User-Secret": password,
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault(); //to not do a browser refresh
     const text = value.trim();
@@ -23,6 +35,12 @@ const MessageForm = (props) => {
     sendMessage(creds, chatId, { files: e.target.files, text: "" });
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("username", username);
+    localStorage.removeItem("password", password);
+    window.location.reload();
+  }
+
   return (
     <form className="message-form" onSubmit={handleSubmit}>
       <div>
@@ -34,6 +52,7 @@ const MessageForm = (props) => {
           onSubmit={handleSubmit}
         />
       </div>
+      <div className="flex flex-row">
       <div>
         <label htmlFor="upload_button">
           <span className="image-button">
@@ -50,6 +69,12 @@ const MessageForm = (props) => {
         <button type="submit" className="send-button">
           <i className="far fa-paper-plane send-icon"></i>
         </button>
+      </div>
+      <div className="me-auto">
+      <button onClick={handleLogout}  className="send-button">
+          <i className="fas fa-power-off send-icon"></i>
+        </button>
+      </div>
       </div>
     </form>
   );
