@@ -12,6 +12,7 @@ const MyMessage = ({ message }) => {
     );
   }
 
+  //console.log("mes = "+ Object(message).values)
   return (
     <div
       className="message"

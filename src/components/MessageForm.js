@@ -5,6 +5,9 @@ const MessageForm = (props) => {
   const [value, setValue] = useState("");
   const { chatId, creds } = props;
 
+  //console.log(chatId = 96113);
+
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const project_id = process.env.REACT_APP_PROJECT_ID;
