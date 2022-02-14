@@ -11,7 +11,7 @@ const ChatFeed = (props) => {
   //   console.log("CHAT - "+ Object.keys(chat))
   //   console.log( "MESSAGE - "+ Object.keys(messages) )
   //   console.log( "USERNAME - "+userName)
-
+  //console.log("sac = "+activeChat)
 
   const renderReadReceipts = (message, isMyMessage) =>
     chat.people.map(
@@ -45,7 +45,7 @@ const ChatFeed = (props) => {
         <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-block">
             {isMyMessage ? (
-              <MyMessage message={message} />
+              <MyMessage {...props} chatId={activeChat} message={message}  />
             ) : (
               <TheirMessage
                 message={message}

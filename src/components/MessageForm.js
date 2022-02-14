@@ -5,7 +5,7 @@ const MessageForm = (props) => {
   const [value, setValue] = useState("");
   const { chatId, creds } = props;
 
-  //console.log(chatId = 96113);
+  //console.log("from message form= "+chatId);
 
 
   const [username, setUsername] = useState("");
