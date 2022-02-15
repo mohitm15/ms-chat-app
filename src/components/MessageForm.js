@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+//import axios from "axios";
+import React, { useState } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
 
 const MessageForm = (props) => {
@@ -11,16 +11,16 @@ const MessageForm = (props) => {
 
   const authuser = localStorage.getItem("username");
   const authpassword = localStorage.getItem("password");
-  const project_id = process.env.REACT_APP_PROJECT_ID;
+  //const project_id = process.env.REACT_APP_PROJECT_ID;
 
-  const [userTyping, setUserTyping ] = useState("");
+  // const [userTyping, setUserTyping ] = useState("");
 
 
-  const authObject = {
-    "Project-ID": project_id,
-    "User-Name": authuser,
-    "User-Secret": authpassword,
-  };
+  // const authObject = {
+  //   "Project-ID": project_id,
+  //   "User-Name": authuser,
+  //   "User-Secret": authpassword,
+  // };
 
   // useEffect(() => {
   //    try {
@@ -93,7 +93,7 @@ const MessageForm = (props) => {
           <i className="fas fa-power-off send-icon"></i>
         </button>
       </div>
-      <span className="text-gray-200 m-auto">{userTyping}...</span>
+      {/* <span className="text-gray-200 m-auto">{userTyping}...</span> */}
       </div>
     </form>
   );
