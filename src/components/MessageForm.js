@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { sendMessage, isTyping } from "react-chat-engine";
 
 const MessageForm = (props) => {
@@ -8,18 +9,32 @@ const MessageForm = (props) => {
   //console.log("from message form= "+chatId);
 
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const authuser = localStorage.getItem("username");
+  const authpassword = localStorage.getItem("password");
   const project_id = process.env.REACT_APP_PROJECT_ID;
 
+  const [userTyping, setUserTyping ] = useState("");
 
 
   const authObject = {
     "Project-ID": project_id,
-    "User-Name": username,
-    "User-Secret": password,
+    "User-Name": authuser,
+    "User-Secret": authpassword,
   };
 
+  // useEffect(() => {
+  //    try {
+  //      let resi = axios.post(`https://api.chatengine.io/chats/${chatId}/typing/`,
+  //    { headers : authObject,});
+  //    //console.log("res - "+ JSON.stringify(resi));
+  //    setUserTyping(resi.person)
+  //    } catch(err) {
+  //      console.log(err)
+  //    }
+
+  // }, [value])
+  // giving authError - IDK why?
+  
   const handleSubmit = (e) => {
     e.preventDefault(); //to not do a browser refresh
     const text = value.trim();
@@ -39,8 +54,8 @@ const MessageForm = (props) => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("username", username);
-    localStorage.removeItem("password", password);
+    localStorage.removeItem("username", authuser);
+    localStorage.removeItem("password", authpassword);
     window.location.reload();
   }
 
@@ -78,6 +93,7 @@ const MessageForm = (props) => {
           <i className="fas fa-power-off send-icon"></i>
         </button>
       </div>
+      <span className="text-gray-200 m-auto">{userTyping}...</span>
       </div>
     </form>
   );
